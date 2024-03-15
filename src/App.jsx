@@ -5,9 +5,14 @@ function App() {
 
   const [state, dispatch] = useExpContext();
 
+  const handleClick = () => {
+    dispatch({type:'add', payload:{category:'Autres'}});
+  }
+
   return (
     <>
       <h1>Mes dépenses personnelles</h1>
+      <button onClick={handleClick}>Surprise ?</button>
       <p>Total : {state.total} €</p>
       <ul>
         {state.categories.map((cat, i) => <li key={i}>{cat.name} : {cat.total}
