@@ -1,4 +1,5 @@
 import './App.css'
+import Expense from './component/Expense';
 import Inputs from './component/Inputs';
 import { useExpContext } from './utils/expContext';
 import{ useState } from 'react';
@@ -21,12 +22,6 @@ function App() {
     }
   
 
-
-
-  // const handleChange = (e) => {
-  //   dispatch({type:'set_input', payload:{inputName:e.target.name, inputValue: e.target.value} })
-  // }
-
   return (
     <>
       <h1>Mes dépenses personnelles</h1>
@@ -48,13 +43,7 @@ function App() {
             </span>
           </h3>
           {expandedCategory === i && (
-            <div className='expenses-container'>
-              <ul>
-                {cat.expenses.map((exp, j) => (
-                  <li className='expense' key={j}><span>{exp.title}</span><span>{exp.amount} €</span></li>
-                ))}
-              </ul>
-            </div>
+            <Expense expenses={cat.expenses}/>
           )}
         </div>
       ))}
