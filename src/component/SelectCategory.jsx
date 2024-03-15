@@ -10,7 +10,7 @@ const SelectCategory = () => {
     }
 
     return (
-        <select className='divertissement' name={'select'} onChange={handleChange}>
+        <select name={'select'} onChange={handleChange}>
             <option value='Alimentation'>Alimentation</option>
             <option value='Logement'>Logement</option>
             <option value='Transport'>Transport</option>

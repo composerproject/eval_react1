@@ -1,55 +1,30 @@
-
-
-
-
-
 .alimentation {
-  /* background-color:#ff5d60; */
-  /* text-decoration: underline; */
-  /* text-decoration-color:#ff5d60; */
-  color:#ff5d60;
+  color: #ff5d60;
 }
 
 .divertissement {
-  /* background-color:#ffbb55; */
-  text-decoration-color:#ffbb55;
-  /* color:#ffbb55; */
-  border-color: #ffbb55;
-  /* outline-color:#ffbb55; */
+  color: #ffbb55;
 }
 
 .logement {
-  /* background-color:#4bc0f6; */
-  text-decoration-color:#4bc0f6;
-  color:#4bc0f6;
+  color: #4bc0f6;
 }
 
 .transport {
-  /* background-color:#4cebd3; */
-  text-decoration-color:#4cebd3;
-  color:#4cebd3;
+  color: #4cebd3;
 }
-
 
 .autres {
-  /* background-color:#e2e2e2; */
-  text-decoration-color:#e2e2e2;
-  color:#bcbcbc;
+  color: #bcbcbc;
 }
 
-
 .sante {
-  /* background-color:#acf052; */
-  text-decoration-color:#acf052;
-  color:#acf052;
+  color: #acf052;
 }
 
 .education {
-  /* background-color:#f44c95; */
-  text-decoration-color:#f44c95;
-  color:#f44c95;
+  color: #f44c95;
 }
-
 
 .category {
   background-color: aliceblue;
@@ -75,7 +50,6 @@ li {
   list-style-type: none;
 }
 
-
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -83,31 +57,11 @@ li {
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
 
 option {
   color: #242424;
 }
 
-input:focus{
-  outline:#ff5d60 2px solid 
+input:focus {
+  outline: #ff5d60 2px solid;
 }
