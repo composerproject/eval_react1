@@ -3,7 +3,7 @@ export const initialState = {
     // input values
     title: 'Monkey D Luffy',
     amount: 300,
-    category: '',
+    category: 'Alimentation',
     total: 12,
     categories: [
         { 
@@ -49,7 +49,9 @@ export const initialState = {
     ]
 }
 
-
+const capitalizeFirstLetter = (word) => {
+    return word.charAt(0).toUpperCase() + word.slice(1);
+}
 
 
 export const reducer = (state, action) => {
@@ -59,9 +61,16 @@ export const reducer = (state, action) => {
         case 'add':
             return {
                 ...state,
+                total: Number(state.total) + Number(state.amount),
                 categories: state.categories.map((category) => {
                     if (category.name === state.category) {
-                        return { ...category, expenses: [...category.expenses, {title: state.title, amount: state.amount}]};
+                        const newExp = {title: capitalizeFirstLetter(state.title), amount: state.amount};
+                        const newTotal = Number(category.total) + Number(state.amount);
+                        return { 
+                            ...category, 
+                            total: newTotal,
+                            expenses: [...category.expenses, newExp]
+                        };
                     }
                     return category;
                 })

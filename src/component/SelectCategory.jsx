@@ -6,10 +6,7 @@ const SelectCategory = () => {
 
     const [_, dispatch] = useExpContext();
 
-    // const [value, setValue] = useState('')
-
     const handleChange = (e) => {
-        // setValue(e.target.value)
         dispatch({type:'set_category', payload: e.target.value});
 
     }

@@ -20,11 +20,11 @@ function App() {
   return (
     <>
       <h1>Mes dépenses personnelles</h1>
+      <p>Total : {state.total} €</p>
       <SelectCategory />
       <input onChange={handleChange} name='title' type="text" placeholder='nom de la dépense'/>
       <input onChange={handleChange} name='amount' type="number" placeholder='montant de la dépense' />
       <button onClick={handleClick}>Ajouter une dépense</button>
-      <p>Total : {state.total} €</p>
       <ul>
         {state.categories.map((cat, i) => (
           <li key={i}>{cat.name} : {cat.total} €
