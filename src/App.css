@@ -1,4 +1,81 @@
 
+
+
+
+
+.alimentation {
+  /* background-color:#ff5d60; */
+  /* text-decoration: underline; */
+  /* text-decoration-color:#ff5d60; */
+  color:#ff5d60;
+}
+
+.divertissement {
+  /* background-color:#ffbb55; */
+  text-decoration-color:#ffbb55;
+  /* color:#ffbb55; */
+  border-color: #ffbb55;
+  /* outline-color:#ffbb55; */
+}
+
+.logement {
+  /* background-color:#4bc0f6; */
+  text-decoration-color:#4bc0f6;
+  color:#4bc0f6;
+}
+
+.transport {
+  /* background-color:#4cebd3; */
+  text-decoration-color:#4cebd3;
+  color:#4cebd3;
+}
+
+
+.autres {
+  /* background-color:#e2e2e2; */
+  text-decoration-color:#e2e2e2;
+  color:#bcbcbc;
+}
+
+
+.sante {
+  /* background-color:#acf052; */
+  text-decoration-color:#acf052;
+  color:#acf052;
+}
+
+.education {
+  /* background-color:#f44c95; */
+  text-decoration-color:#f44c95;
+  color:#f44c95;
+}
+
+
+.category {
+  background-color: aliceblue;
+}
+
+.expense {
+  background-color: white;
+}
+
+.arrow-right {
+  display: inline-block;
+  transform: rotate(270deg);
+  transition: transform 0.2s ease-in-out;
+}
+
+.arrow-down {
+  display: inline-block;
+  transform: rotate(360deg);
+  transition: transform 0.2s ease-in-out;
+}
+
+li {
+  list-style-type: none;
+}
+
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -19,25 +96,14 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
 .card {
   padding: 2em;
 }
 
 .read-the-docs {
   color: #888;
+}
+
+option {
+  color: #242424;
 }

@@ -1,7 +1,5 @@
 import { useExpContext } from "../utils/expContext";
 
-
-
 const SelectCategory = () => {
 
     const [_, dispatch] = useExpContext();
@@ -12,7 +10,7 @@ const SelectCategory = () => {
     }
 
     return (
-        <select name={'select'} onChange={handleChange}>
+        <select className='divertissement' name={'select'} onChange={handleChange}>
             <option value='Alimentation'>Alimentation</option>
             <option value='Logement'>Logement</option>
             <option value='Transport'>Transport</option>
