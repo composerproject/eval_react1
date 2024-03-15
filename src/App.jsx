@@ -1,12 +1,16 @@
 import './App.css'
+import SelectCategory from './component/SelectCategory';
 import { useExpContext } from './utils/expContext';
 
+
+
 function App() {
+  
 
   const [state, dispatch] = useExpContext();
 
   const handleClick = () => {
-    dispatch({type:'add', payload:{category:'Autres'}});
+    dispatch({type:'add'});
   }
 
   const handleChange = (e) => {
@@ -16,20 +20,25 @@ function App() {
   return (
     <>
       <h1>Mes dépenses personnelles</h1>
+      <SelectCategory />
       <input onChange={handleChange} name='title' type="text" placeholder='nom de la dépense'/>
       <input onChange={handleChange} name='amount' type="number" placeholder='montant de la dépense' />
       <button onClick={handleClick}>Ajouter une dépense</button>
       <p>Total : {state.total} €</p>
       <ul>
-        {state.categories.map((cat, i) => <li key={i}>{cat.name} : {cat.total} €
-          <ul>
-            {cat.expenses.map((exp, j) => <li key={j}>{exp.title} : {exp.amount} €</li>)}
-          </ul>
-        </li>)}
+        {state.categories.map((cat, i) => (
+          <li key={i}>{cat.name} : {cat.total} €
+            <ul>
+              {cat.expenses.map((exp, j) => <li key={j}>{exp.title} : {exp.amount} €</li>)}
+            </ul>
+          </li>
+        ))}
       </ul>
       <div>App</div>
+      
+
     </>
-  )
+  );
 }
 
 export default App

@@ -3,6 +3,7 @@ export const initialState = {
     // input values
     title: 'Monkey D Luffy',
     amount: 300,
+    category: '',
     total: 12,
     categories: [
         { 
@@ -49,15 +50,18 @@ export const initialState = {
 }
 
 
+
+
 export const reducer = (state, action) => {
+
 
     switch (action.type) {
         case 'add':
             return {
                 ...state,
                 categories: state.categories.map((category) => {
-                    if (category.name === action.payload.category) {
-                        return { ...category, name: "Surprise", expenses: [...category.expenses, {title: state.title, amount: state.amount}]};
+                    if (category.name === state.category) {
+                        return { ...category, expenses: [...category.expenses, {title: state.title, amount: state.amount}]};
                     }
                     return category;
                 })
@@ -66,6 +70,11 @@ export const reducer = (state, action) => {
             return {
                 ...state,
                 [action.payload.inputName]: action.payload.inputValue
+            };
+        case 'set_category':
+            return {
+                ...state,
+                category: action.payload
             };
         default:
             return initialState;
