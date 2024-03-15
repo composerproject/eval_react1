@@ -1,4 +1,5 @@
 import './App.css'
+import Category from './component/Category';
 import Expense from './component/Expense';
 import Inputs from './component/Inputs';
 import { useExpContext } from './utils/expContext';
@@ -10,17 +11,7 @@ function App() {
 
   const [state, dispatch] = useExpContext();
   
-    const [openedCategoryIndex, setOpenedCategoryIndex] = useState(-1);
-    const [expandedCategory, setExpandedCategory] = useState(null);
-  
-    const toggleCategory = (index) => {
-      setOpenedCategoryIndex(openedCategoryIndex === index ? -1 : index);
-    };
-  
-    function removeAccent(a) {
-      return a.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-    }
-  
+
 
   return (
     <>
@@ -31,21 +22,22 @@ function App() {
 
     <div>
       {state.categories.map((cat, i) => (
-        <div key={i}>
-          <h3 
-            onClick={() => setExpandedCategory(expandedCategory === i ? null : i)}
-            className="category-title"
-          >
-            <span className={removeAccent(cat.name.toLowerCase())}>{cat.name}</span><span><span className='category-price'>{cat.total} €</span>
-            <i className={expandedCategory === i ? "arrow arrow-down" : "arrow arrow-right"}>
-              ▼
-            </i>
-            </span>
-          </h3>
-          {expandedCategory === i && (
-            <Expense expenses={cat.expenses}/>
-          )}
-        </div>
+        <Category key={i} cat={cat} i={i} />
+        // <div key={i}>
+        //   <h3 
+        //     onClick={() => setExpandedCategory(expandedCategory === i ? null : i)}
+        //     className="category-title"
+        //   >
+        //     <span className={removeAccent(cat.name.toLowerCase())}>{cat.name}</span><span><span className='category-price'>{cat.total} €</span>
+        //     <i className={expandedCategory === i ? "arrow arrow-down" : "arrow arrow-right"}>
+        //       ▼
+        //     </i>
+        //     </span>
+        //   </h3>
+        //   {expandedCategory === i && (
+        //     <Expense expenses={cat.expenses}/>
+        //   )}
+        // </div>
       ))}
     </div>
 
