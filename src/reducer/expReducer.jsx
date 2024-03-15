@@ -2,7 +2,7 @@
 export const initialState = {
     // input values
     title: '',
-    amount: 0,
+    total: 12,
     categories: [
         { 
             name: 'Alimentation',
@@ -49,7 +49,7 @@ export const initialState = {
   
 export const reducer = (state, action) => {
 switch (action.type) {
-    
+
 
     default:
         return initialState;
