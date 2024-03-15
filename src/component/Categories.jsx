@@ -1,9 +1,14 @@
+import Category from "./Category";
 
 
-function Categories() {
+function Categories({categories}) {
   return (
-    <div>Categories</div>
-  )
+    <div>
+      {categories.map((cat, i) => (
+        <Category key={i} cat={cat} i={i} />
+      ))}
+    </div>
+  );
 }
 
-export default Categories
+export default Categories;

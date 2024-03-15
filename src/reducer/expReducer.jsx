@@ -1,8 +1,8 @@
 
 export const initialState = {
     // input values
-    title: 'Monkey D Luffy',
-    amount: 300,
+    title: '',
+    amount: 0,
     category: 'Alimentation',
     total: 12,
     categories: [
