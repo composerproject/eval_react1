@@ -62,6 +62,11 @@ export const reducer = (state, action) => {
                     return category;
                 })
             };
+        case 'set_input':
+            return {
+                ...state,
+                [action.payload.inputName]: action.payload.inputValue
+            };
         default:
             return initialState;
     }
