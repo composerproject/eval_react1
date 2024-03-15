@@ -1,6 +1,5 @@
 import './App.css'
-import Input from './component/Input';
-import SelectCategory from './component/SelectCategory';
+import Inputs from './component/Inputs';
 import { useExpContext } from './utils/expContext';
 import{ useState } from 'react';
 
@@ -23,9 +22,6 @@ function App() {
   
 
 
-  const handleClick = () => {
-    dispatch({type:'add'});
-  }
 
   // const handleChange = (e) => {
   //   dispatch({type:'set_input', payload:{inputName:e.target.name, inputValue: e.target.value} })
@@ -36,17 +32,7 @@ function App() {
       <h1>Mes dépenses personnelles</h1>
       <h2>Total : {state.total} €</h2>
       
-      <div className='choices'>
-        <SelectCategory />
-        <Input name='title' type='text' placeholder='nom de la dépense...' />
-        <Input name='amount' type='number' placeholder='montant de la réponse' />
-
-        {/* <input onChange={handleChange} name='title' type="text" placeholder='nom de la dépense...'/>
-
-        <input onChange={handleChange} name='amount' type="number" placeholder='montant de la dépense...' /> */}
-
-        <button onClick={handleClick}>Ajouter une dépense</button>
-      </div>
+<Inputs />
 
     <div>
       {state.categories.map((cat, i) => (
